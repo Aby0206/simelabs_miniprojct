@@ -19,7 +19,7 @@ const Home = () => {
 
     <div className='user_data'>
       <img
-        src= './img/first.jpg'
+        src= './src/img/office_upld.jpg'
         alt='office_image1'
         className='centered-image'
       />

@@ -1,0 +1,70 @@
+
+
+
+.emplist {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+  }
+  
+  
+  #emphd {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  
+  #empul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .emplisting {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  
+  li p {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  
+  li p:first-child {
+    font-weight: bold;
+  }
+  
+  
+  li:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  
+  
+  .button-container {
+    text-align: center;
+  }
+  
+  .button-container button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-container button:hover {
+    background-color: #0056b3;
+  }
+  

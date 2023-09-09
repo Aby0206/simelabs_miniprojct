@@ -4,12 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import header from './components/header/header';
+import LeaveForm from './components/leave/leave';
+import AddEmployee from './components/add_emp/add.emp';
+import EmployeeList from './components/emp_list/emp_list';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
-
+    {/* <AddEmployee onAddEmployee={handleAddEmployee} /> */}
   
 
   </React.StrictMode>

@@ -1,42 +1,68 @@
-import React from 'react';
-
-const employees = [
-  { id: 1, name: 'joe Vargheese', role: 'Developer' },
-  { id: 2, name: 'Divya Mathew', role: 'Designer' },
-  { id: 3, name: 'Derrick Sebastian', role: 'Director' },
-  { id: 4, name: 'Aby Antony', role: 'Developer' }
-  
-];
+import React, { useState, useEffect } from 'react';
+import AddEmployee from '../add_emp/add.emp';
+import LeaveForm from '../leave/leave';
+import './emp_list.css';
 
 const EmployeeList = () => {
+  
+  const [employees, setEmployees] = useState([]);
+
+  const handleAddEmployee = (newEmployee) => {
+    
+    const updatedEmployees = [...employees, newEmployee];
+    setEmployees(updatedEmployees);
+
+    localStorage.setItem('employees', JSON.stringify(updatedEmployees));
+  };
+
+  const handleLeaveRequest = () =>{
+    
+  }
+
+  useEffect(() => {
+    
+    const fetchEmployees = () => {
+      
+      const fetchedEmployees = [
+        { id: 1, name: 'Aby Antony', role: 'Developer' },
+        { id: 2, name: 'Sibi Mathew', role: 'Developer' },
+        { id: 3, name: 'Joe Varghese', role: 'Developer' },
+        { id: 4, name: 'Safi Sulaiman', role: 'Unix programmer' },
+        { id: 5, name: 'Dominic K Savio', role: 'Salesforce Developer' }  
+      ];
+
+      
+      localStorage.setItem('employees', JSON.stringify(fetchedEmployees));
+
+      
+      setEmployees(fetchedEmployees);
+    };
+
+    const storedEmployees = localStorage.getItem('employees');
+
+    if (storedEmployees) {
+      
+      setEmployees(JSON.parse(storedEmployees));
+    } else {
+      
+      fetchEmployees();
+    }
+  }, []); 
+
   return (
-    <div>
-      <h2>Employee List</h2>
-      <ul>
+    <div className='emplist'>
+      <h2 id='emphd'>Employee List</h2>
+      <ul id='empul'>
         {employees.map(employee => (
-          <li style={{}} key={employee.id}>
+          <li className='emplisting' style={{}} key={employee.id}>
             ID: {employee.id}, Name: {employee.name}, Role: {employee.role}
           </li>
         ))}
       </ul>
+      {/* <AddEmployee onAddEmployee={handleAddEmployee} /> 
+      <LeaveForm employees={employees} onSubmitLeave = { handleLeaveRequest } />  */}
     </div>
   );
 };
 
-const employeesJSON = JSON.stringify(employees);
-
-localStorage.setItem('employeesData', employeesJSON);
-
-// Retrieve the JSON string from local storage
-const storedEmployeeJSON = localStorage.getItem('employeeData');
-
-// Convert the JSON string back to an object
-const storedEmployee = JSON.parse(storedEmployeeJSON);
-
-console.log(storedEmployee);
-
-
 export default EmployeeList;
-
-
-
