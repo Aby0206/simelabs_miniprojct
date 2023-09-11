@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './addemp.css';
 
 
-const AddEmployee = ({ onAddEmployee }) => {
+const AddEmployee = () => {
   const [employee, setEmployee] = useState({ id: '', name: '', role: '' });
 
   const handleInputChange = (e) => {
@@ -12,7 +12,7 @@ const AddEmployee = ({ onAddEmployee }) => {
 
   const handleAddClick = () => {
    
-    onAddEmployee(employee);
+
 
     
     const existingEmployees = JSON.parse(localStorage.getItem('employees')) || [];

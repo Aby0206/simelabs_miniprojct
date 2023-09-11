@@ -12,7 +12,7 @@ function Header() {
           <li><Link to="/add">Add Employee</Link></li>
           <li><Link to="/listener">Employee listener</Link></li>
           <li><Link to="leaveapp">Leave Application</Link></li>
-          <li><Link to="leave">Leave History</Link></li>
+          <li><Link to="/">Leave History</Link></li>
         </ul>
       </nav>
     </header>

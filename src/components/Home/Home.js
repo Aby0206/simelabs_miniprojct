@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../header/header'
 import './home.css';
-// import officeImage from './public/img/'
+import officeImage from '../../img/office_upld.jpg'
 
 
 const Home = () => {
@@ -19,7 +19,7 @@ const Home = () => {
 
     <div className='user_data'>
       <img
-        src= '/second_office.jpg'
+        src= {officeImage}
         alt='office_image2'
         className='centered-image'
       />
