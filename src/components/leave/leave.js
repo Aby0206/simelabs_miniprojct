@@ -10,7 +10,7 @@ const LeaveForm = ({ employees, onSubmitLeave }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validate form fields here
+    
 
     const leaveData = {
       employeeId: selectedEmployeeId,

@@ -15,7 +15,7 @@ const EmployeeList = () => {
     localStorage.setItem('employees', JSON.stringify(updatedEmployees));
   };
 
-  const handleLeaveRequest = () =>{
+  const handleLeaveRequest = () => {
     
   }
 
@@ -59,8 +59,8 @@ const EmployeeList = () => {
           </li>
         ))}
       </ul>
-      {/* <AddEmployee onAddEmployee={handleAddEmployee} /> 
-      <LeaveForm employees={employees} onSubmitLeave = { handleLeaveRequest } />  */}
+       {/* <AddEmployee onAddEmployee={handleAddEmployee} /> 
+       <LeaveForm employees={employees} onSubmitLeave = { handleLeaveRequest } /> */}
     </div>
   );
 };

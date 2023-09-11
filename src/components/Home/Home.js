@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../header/header'
 import './home.css';
-//import officeImage from '../img/first.jpg'
+// import officeImage from './public/img/'
 
 
 const Home = () => {
@@ -19,8 +19,8 @@ const Home = () => {
 
     <div className='user_data'>
       <img
-        src= './src/img/office_upld.jpg'
-        alt='office_image1'
+        src= '/second_office.jpg'
+        alt='office_image2'
         className='centered-image'
       />
     </div>
@@ -30,4 +30,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Home;
