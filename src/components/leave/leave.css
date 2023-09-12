@@ -1,4 +1,6 @@
 .leave-form {
+    position: relative;
+    top: 20px;
     max-width: 400px;
     margin: auto;
     padding: 20px;
@@ -34,7 +36,11 @@
   }
   
   button[type="submit"] {
-    display: inline-block;
+    /* position: relative; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
     padding: 10px 20px;
     background-color: #007bff;
