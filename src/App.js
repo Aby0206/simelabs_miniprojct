@@ -5,6 +5,7 @@ import Home from './components/Home/Home';
 import LeaveForm from './components/leave/leave';
 import EmployeeList from './components/emp_list/emp_list';
 import AddEmployee from './components/add_emp/add.emp';
+import LeaveHistory from './components/leave/LeaveHistory';
 import Header from './components/header/header';
 //import LeaveHistory from './components/leave/LeaveHistory';
 // import LeaveHeader from './components/header/LeaveHeader';
@@ -20,7 +21,7 @@ function App() {
         <Route path="/leaveapp" element={<LeaveForm />} />
         <Route path="/listener" element={<EmployeeList />} />
         <Route path="/add" element={<AddEmployee />} />
-        {/* <Route path="/history" element={<LeaveHistory />}></Route> */}
+        <Route path="/history" element={<LeaveHistory />}></Route>
       </Routes>
     </Router>
   );
