@@ -16,7 +16,9 @@ function App() {
   return (
     <Router>
       {/* Include the appropriate header component for each route */}
+      <Header />
       <Routes>
+        
         <Route path="/" element={<Home />} />
         <Route path="/leaveapp" element={<LeaveForm />} />
         <Route path="/listener" element={<EmployeeList />} />

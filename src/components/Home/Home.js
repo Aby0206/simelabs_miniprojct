@@ -8,7 +8,7 @@ const Home = () => {
   return (
   <div>
     <div className='home_des'>
-        <Header />
+        {/* <Header /> */}
       <h1 style={
         {textAlign: 'center',
         textDecoration: 'underline'}
