@@ -69,7 +69,7 @@ const EmployeeList = () => {
       </ul>
        {/* <AddEmployee onAddEmployee={handleAddEmployee} /> 
        <LeaveForm employees={employees} onSubmitLeave = { handleLeaveRequest } /> */}
-       <LeaveHistory/>
+       {/* <LeaveHistory/> */}
     </div>
   );
 };
