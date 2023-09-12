@@ -4,6 +4,8 @@ import './addemp.css';
 
 const AddEmployee = () => {
   const [employee, setEmployee] = useState({ id: '', name: '', role: '' });
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isFailure, setIsFailure] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -12,19 +14,31 @@ const AddEmployee = () => {
 
   const handleAddClick = () => {
    
-
-
-    
     const existingEmployees = JSON.parse(localStorage.getItem('employees')) || [];
+
+    if(employee.id && employee.name && employee.role){
+
     const updatedEmployees = [...existingEmployees, employee];
     localStorage.setItem('employees', JSON.stringify(updatedEmployees));
 
     setEmployee({ id: '', name: '', role: '' });
+    setIsSuccess(true);
+    setIsFailure(false);
+
+    }
+    
+    else {
+      setIsFailure(true);
+      setIsSuccess(false);
+    }
+    
   };
 
   return (
     <div className='addemp'>
       <h2>Add Employee</h2>
+      {isSuccess && <p className='success-msg'>Addition Successfull</p>}
+      {isFailure && <p className='failure-msg'>Unsuccessfull, Please Fill All Fields</p>}
       <div>
         <label>ID:</label>
         <input type="text" name="id" value={employee.id} onChange={handleInputChange} />

@@ -29,6 +29,9 @@
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   
   
@@ -66,5 +69,14 @@
   
   .button-container button:hover {
     background-color: #0056b3;
+  }
+
+  .remve_btn{
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+    
   }
   

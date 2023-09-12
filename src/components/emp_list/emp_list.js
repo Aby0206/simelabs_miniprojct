@@ -19,6 +19,12 @@ const EmployeeList = () => {
     
   }
 
+  const handleRemoveEmployee = (employeeId) => {
+    const updatedEmployees = employees.filter(employee => employee.id !== employeeId);
+    setEmployees(updatedEmployees);
+    localStorage.setItem('employees', JSON.stringify(updatedEmployees));
+  };
+
   useEffect(() => {
     
     const fetchEmployees = () => {
@@ -56,6 +62,7 @@ const EmployeeList = () => {
         {employees.map(employee => (
           <li className='emplisting' style={{}} key={employee.id}>
             ID: {employee.id}, Name: {employee.name}, Role: {employee.role}
+            <button className='remve_btn' onClick={() => handleRemoveEmployee(employee.id)}>Remove</button>
           </li>
         ))}
       </ul>

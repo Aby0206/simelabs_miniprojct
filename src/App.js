@@ -6,7 +6,7 @@ import LeaveForm from './components/leave/leave';
 import EmployeeList from './components/emp_list/emp_list';
 import AddEmployee from './components/add_emp/add.emp';
 import Header from './components/header/header';
-import LeaveHistory from './components/leave/LeaveHistory';
+//import LeaveHistory from './components/leave/LeaveHistory';
 // import LeaveHeader from './components/header/LeaveHeader';
 // import EmployeeListHeader from './components/header/EmployeeListHeader';
 // import AddEmployeeHeader from './components/header/AddEmployeeHeader';
