@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/simelabs_miniprojct/static/css/main.a25db5e3.css",
+    "main.js": "/simelabs_miniprojct/static/js/main.45668d5d.js",
+    "static/js/787.b1ff865d.chunk.js": "/simelabs_miniprojct/static/js/787.b1ff865d.chunk.js",
+    "static/media/office_upld.jpg": "/simelabs_miniprojct/static/media/office_upld.ebf7ce7e4e79223ca3aa.jpg",
+    "index.html": "/simelabs_miniprojct/index.html",
+    "main.a25db5e3.css.map": "/simelabs_miniprojct/static/css/main.a25db5e3.css.map",
+    "main.45668d5d.js.map": "/simelabs_miniprojct/static/js/main.45668d5d.js.map",
+    "787.b1ff865d.chunk.js.map": "/simelabs_miniprojct/static/js/787.b1ff865d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a25db5e3.css",
+    "static/js/main.45668d5d.js"
+  ]
+}
