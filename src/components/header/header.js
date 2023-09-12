@@ -8,7 +8,7 @@ function Header() {
     <header>
       <nav>
         <ul className='horizontal-list'>
-          <li><Link to="/">Home</Link></li>
+          <li><Link to="/home">Home</Link></li>
           <li><Link to="/add">Add Employee</Link></li>
           <li><Link to="/listener">Employee listener</Link></li>
           <li><Link to="leaveapp">Leave Application</Link></li>
