@@ -16,9 +16,9 @@ const EmployeeList = () => {
     localStorage.setItem('employees', JSON.stringify(updatedEmployees));
   };
 
-  const handleLeaveRequest = () => {
+  // const handleLeaveRequest = () => {
     
-  }
+  // }
 
   const handleRemoveEmployee = (employeeId) => {
     const updatedEmployees = employees.filter(employee => employee.id !== employeeId);

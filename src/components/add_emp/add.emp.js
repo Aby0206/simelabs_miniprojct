@@ -13,26 +13,27 @@ const AddEmployee = () => {
   };
 
   const handleAddClick = () => {
-   
     const existingEmployees = JSON.parse(localStorage.getItem('employees')) || [];
-
-    if(employee.id && employee.name && employee.role){
-
-    const updatedEmployees = [...existingEmployees, employee];
-    localStorage.setItem('employees', JSON.stringify(updatedEmployees));
-
-    setEmployee({ id: '', name: '', role: '' });
-    setIsSuccess(true);
-    setIsFailure(false);
-
-    }
     
-    else {
+    
+    const isEmployeeExists = existingEmployees.some((emp) => emp.id === employee.id);
+  
+    if (isEmployeeExists) {
+      setIsFailure(true);
+      setIsSuccess(false);
+    } else if (employee.id && employee.name && employee.role) {
+      const updatedEmployees = [...existingEmployees, employee];
+      localStorage.setItem('employees', JSON.stringify(updatedEmployees));
+      setEmployee({ id: '', name: '', role: '' });
+      setIsSuccess(true);
+      setIsFailure(false);
+    } else {
       setIsFailure(true);
       setIsSuccess(false);
     }
-    
   };
+  
+  
 
   return (
     <div className='addemp'>
