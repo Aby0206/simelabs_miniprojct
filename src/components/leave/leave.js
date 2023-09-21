@@ -1,51 +1,59 @@
 import React, { useEffect, useState } from 'react';
 import './leave.css';
 
-const LeaveForm = ({ employees}) => {
+const LeaveForm = ({ employees }) => {
   const [selectedEmployeeId, setSelectedEmployeeId] = useState('');
-  const[employeeArray,setEmployeeArray] = useState([])
+  const [employeeArray, setEmployeeArray] = useState([]);
   const [leaveType, setLeaveType] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
-  const[errorMessage,setError]= useState(false)
-  async function onSubmitHandler(e){
+  const [errorMessage, setError] = useState(false);
+  const [leaveRequests, setLeaveRequests] = useState([]);
 
-  }
-  useEffect(()=>{
-    setEmployeeArray(JSON.parse(localStorage.getItem('employees')))
-    console.log(employeeArray)
-  },[employeeArray])
+  useEffect(() => {
+    setEmployeeArray(JSON.parse(localStorage.getItem('employees')));
+    setLeaveRequests(JSON.parse(localStorage.getItem('leaveRequests')) || []);
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const leaveData = {
-      employeeId: selectedEmployeeId,
-      leaveType,
-      startDate,
-      endDate,
-    };
 
-    // onSubmitLeave(leaveData);
-    if(selectedEmployeeId&&leaveType&&startDate&&endDate){
-      let leaveRequests = JSON.parse(localStorage.getItem('leaveRequests')) || [];
-      leaveRequests.push(leaveData);
-      localStorage.setItem('leaveRequests', JSON.stringify(leaveRequests));
+    
+    const hasConflict = leaveRequests.some((request) => {
+      return (
+        request.employeeId === selectedEmployeeId &&
+        ((startDate >= request.startDate && startDate <= request.endDate) ||
+          (endDate >= request.startDate && endDate <= request.endDate))
+      );
+    });
+
+    if (hasConflict) {
+      setError(true);
+    } else {
+    
+      const leaveData = {
+        employeeId: selectedEmployeeId,
+        leaveType,
+        startDate,
+        endDate,
+      };
+
+      let updatedLeaveRequests = [...leaveRequests, leaveData];
+      localStorage.setItem('leaveRequests', JSON.stringify(updatedLeaveRequests));
+      setLeaveRequests(updatedLeaveRequests);
+
+      setSelectedEmployeeId('');
+      setLeaveType('');
+      setStartDate('');
+      setEndDate('');
+      setError(false);
     }
-    else{
-      setError(true)
-    }
-
-    setSelectedEmployeeId('');
-    setLeaveType('');
-    setStartDate('');
-    setEndDate('');
-
   };
 
   return (
     <div className="leave-form">
       <h2>Leave Request Form</h2>
-  
-      {errorMessage?<p style={{"color":"red"}}>Values not entered</p>:""}
+      {errorMessage && <p style={{ color: 'red' }}>Leave request conflicts with existing requests</p>}
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Select Employee:</label>

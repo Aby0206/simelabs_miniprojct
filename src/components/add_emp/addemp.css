@@ -1,51 +1,53 @@
-/* AddEmployee.css (or any other appropriate file name) */
-
 /* Container styling */
 .addemp {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    max-width: 400px;
-    text-align: center;
-  }
-  
-  /* Heading styling */
-  h2 {
-    color: #333;
-  }
-  
-  /* Input fields styling */
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
-  }
-  
-  input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  /* Button styling */
-  button {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* Heading styling */
+.addemp h2 {
+  color: #333;
+}
+
+/* Input fields styling */
+.addemp label {
+  display: block;
+  margin-bottom: 10px; /* Increase margin for more spacing between label and input */
+  font-weight: bold;
+  color: #555;
+}
+
+.addemp input[type="text"],
+.addemp input[type="number"] {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 10px; /* Increase margin for more spacing between input fields */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.addemp input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+/* Button styling */
+.addemp button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.addemp button:hover {
+  background-color: #0056b3;
+}
