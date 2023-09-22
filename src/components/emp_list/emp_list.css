@@ -2,7 +2,7 @@
 
 
 .emplist {
-    background-color: #f5f5f5;
+    background-color: rgba(0, 0, 0, 0.5);;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -13,7 +13,7 @@
   
   
   #emphd {
-    color: #333;
+    color: #fff;
     margin-bottom: 20px;
   }
   
@@ -57,7 +57,7 @@
   }
   
   .button-container button {
-    background-color: #007BFF;
+    background-color: #FF0000;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -67,16 +67,22 @@
     transition: background-color 0.3s ease;
   }
   
-  .remve_btn:hover {
-    background-color: #0056b3;
-  }
-
-  .remve_btn{
-  background-color: red;
+ .remve_btn{
+  background-color: #FF0000;
   color: white;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
     
+  }
+
+  .remve_btn:hover {
+    background: #FF0000;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #FF0000,
+                0 0 25px #FF0000,
+                0 0 50px #FF0000,
+                0 0 100px #FF0000;
   }
   

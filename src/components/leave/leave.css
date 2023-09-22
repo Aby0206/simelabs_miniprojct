@@ -5,15 +5,16 @@
     max-width: 400px;
     margin: auto;
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: none;
+    /* border-radius: 5px; */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    background-color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);;;
   }
   
   .leave-form h2 {
     font-size: 1.5rem;
     margin-bottom: 20px;
+    color: #fff;
   }
   
   .form-group {
@@ -24,6 +25,7 @@
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
+    color: #fff;
   }
   
   select,

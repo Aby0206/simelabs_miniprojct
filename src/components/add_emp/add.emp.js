@@ -42,36 +42,44 @@ const AddEmployee = () => {
         <p className="failure-msg">Unsuccessful, Please Fill All Fields</p>
       )}
       <div>
-        <label>ID:</label>
+        <label>Id</label>
         <input
           type="number"
           name="id"
           value={employee.id}
           onChange={handleInputChange}
+          placeholder="Enter Employee Id"
           id={`id_${employee.id}`} // Unique ID generation
         />
       </div>
       <div>
-        <label>Name:</label>
+        <label>Name</label>
         <input
           type="text"
           name="name"
           value={employee.name}
           onChange={handleInputChange}
+          placeholder="Enter Name of Employee"
           id={`name_${employee.id}`} // Unique ID generation
         />
       </div>
       <div>
-        <label>Role:</label>
+        <label>Role</label>
         <input
           type="text"
           name="role"
           value={employee.role}
           onChange={handleInputChange}
+          placeholder="Enter the Role"
           id={`role_${employee.id}`} // Unique ID generation
         />
       </div>
-      <button onClick={handleAddClick}>Add Employee</button>
+      <button onClick={handleAddClick} class="btn-submit">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+        Add Employee</button>
     </div>
   );
 };

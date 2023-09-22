@@ -80,6 +80,7 @@ const LeaveForm = ({ employees }) => {
           <input
             type="text"
             value={leaveType}
+            placeholder='Enter Reason'
             onChange={(e) => setLeaveType(e.target.value)}
             
           />

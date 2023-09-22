@@ -1,8 +1,9 @@
 header {
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
     padding: 1rem;
     text-align: center;
+    height: 50px;
   }
   
   nav {
@@ -24,5 +25,12 @@ header {
   .horizontal-list a {
     color: #fff;
     text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+
+  .horizontal-list a:hover{
+    color: #03e9f4;
   }
   

@@ -1,32 +1,43 @@
-/* Container styling */
 .addemp {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-  max-width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
   text-align: center;
 }
 
 /* Heading styling */
 .addemp h2 {
-  color: #333;
+  margin: 0 0 30px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+/* Label Styling */
+.addemp .label {
+  position: relative;
 }
 
 /* Input fields styling */
-.addemp label {
+.addemp label input {
   display: block;
-  margin-bottom: 10px; /* Increase margin for more spacing between label and input */
+  margin-bottom: 10px;
   font-weight: bold;
-  color: #555;
+  color: #fff;
 }
 
 .addemp input[type="text"],
 .addemp input[type="number"] {
   width: 90%;
   padding: 10px;
-  margin-bottom: 10px; /* Increase margin for more spacing between input fields */
+  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 16px;
@@ -38,16 +49,186 @@
 
 /* Button styling */
 .addemp button {
-  background-color: #007BFF;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
+  position: relative;
+  display: inline-block;
   padding: 10px 20px;
+  color: #03e9f4;
   font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: .5s;
+  margin-top: 40px;
+  letter-spacing: 4px;
+  border: none;
 }
 
 .addemp button:hover {
-  background-color: #0056b3;
+  background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+}
+
+.addemp button span {
+  position: absolute;
+  display: block;
+}
+
+.addemp button span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, #03e9f4);
+  animation: btn-anim1 1s linear infinite;
+}
+
+@keyframes btn-anim1 {
+  0% {
+      left: -100%;
+  }
+  50%, 100% {
+      left: 100%;
+  }
+}
+
+.addemp button span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s;
+}
+
+@keyframes btn-anim2 {
+  0% {
+      top: -100%;
+  }
+  50%, 100% {
+      top: 100%;
+  }
+}
+
+.addemp button span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, #03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s;
+}
+
+@keyframes btn-anim3 {
+  0% {
+      right: -100%;
+  }
+  50%, 100% {
+      right: 100%;
+  }
+}
+
+.addemp button span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s;
+}
+
+@keyframes btn-anim4 {
+  0% {
+      bottom: -100%;
+  }
+  50%, 100% {
+      bottom: 100%;
+  }
+}
+
+
+.btn-submit{
+  background-color: transparent;
+}
+.btn-submit span{
+  position: absolute;
+  display: block;
+}
+.btn-submit span:nth-child(1){
+  top: 0;
+  left: -100%;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(90deg,transparent,#03e9f4);
+  animation: btn-anim1 1s linear infinite;
+}
+@keyframes btn-anim1{
+  0%{
+      left: -100%;
+  }
+  50%,100%{
+      left: 100%;
+  }
+}
+.btn-submit span:nth-child(2){
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg,transparent,#03e9f4);
+  animation: btn-anim2 1s linear infinite;
+  animation-delay: .25s;
+}
+@keyframes btn-anim2{
+  0%{
+      top: -100%;
+  }
+  50%,100%{
+      top: 100%;
+  }
+}
+.btn-submit span:nth-child(3){
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg,transparent,#03e9f4);
+  animation: btn-anim3 1s linear infinite;
+  animation-delay: .5s;
+}
+@keyframes btn-anim3{
+  0%{
+      right: -100%;
+  }
+  50%,100%{
+      right: 100%;
+  }
+}
+.btn-submit span:nth-child(4){
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg,transparent,#03e9f4);
+  animation: btn-anim4 1s linear infinite;
+  animation-delay: .75s;
+}
+@keyframes btn-anim4{
+  0%{
+      bottom: -100%;
+  }
+  50%,100%{
+      bottom: 100% ;
+  }
+}
+
+.failure-msg{
+  color: #03e9f4;
 }
