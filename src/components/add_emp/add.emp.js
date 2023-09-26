@@ -39,7 +39,7 @@ const AddEmployee = () => {
     <div className='addemp'>
       <h2>Add Employee</h2>
       {isSuccess && <p className='success-msg'>Addition Successfull</p>}
-      {isFailure && <p className='failure-msg'>Unsuccessfull, Please Fill All Fields</p>}
+      {isFailure && <p className='failure-msg'>Unsuccessfull, Please Fill All fields</p>}
       <div>
         <label>ID:</label>
         <input type="text" name="id" value={employee.id} onChange={handleInputChange} />
