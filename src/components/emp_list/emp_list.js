@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import AddEmployee from '../add_emp/add.emp';
-import LeaveForm from '../leave/leave';
-import LeaveHistory from '../leave/LeaveHistory';
+// import AddEmployee from '../add_emp/add.emp';
+// import LeaveForm from '../leave/leave';
+// import LeaveHistory from '../leave/LeaveHistory';
 import './emp_list.css';
 
 const EmployeeList = () => {
@@ -43,6 +43,7 @@ const EmployeeList = () => {
 
       
       setEmployees(fetchedEmployees);
+      
     };
 
     const storedEmployees = localStorage.getItem('employees');

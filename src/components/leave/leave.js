@@ -1,54 +1,66 @@
 import React, { useEffect, useState } from 'react';
 import './leave.css';
 
-const LeaveForm = ({ employees}) => {
+const LeaveForm = ({ employees }) => {
   const [selectedEmployeeId, setSelectedEmployeeId] = useState('');
-  const[employeeArray,setEmployeeArray] = useState([])
+  const [employeeArray, setEmployeeArray] = useState([]);
   const [leaveType, setLeaveType] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
-  const[errorMessage,setError]= useState(false)
-  async function onSubmitHandler(e){
+  const [errorMessage, setError] = useState(false);
+  const [leaveRequests, setLeaveRequests] = useState([]);
+  const [successmsg, setSuccessmsg]  = useState('');
 
-  }
-  useEffect(()=>{
-    setEmployeeArray(JSON.parse(localStorage.getItem('employees')))
-    console.log(employeeArray)
-  },[employeeArray])
+  useEffect(() => {
+    setEmployeeArray(JSON.parse(localStorage.getItem('employees')));
+    setLeaveRequests(JSON.parse(localStorage.getItem('leaveRequests')) || []);
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const leaveData = {
-      employeeId: selectedEmployeeId,
-      leaveType,
-      startDate,
-      endDate,
-    };
 
-    // onSubmitLeave(leaveData);
-    if(selectedEmployeeId&&leaveType&&startDate&&endDate){
-      let leaveRequests = JSON.parse(localStorage.getItem('leaveRequests')) || [];
-      leaveRequests.push(leaveData);
-      localStorage.setItem('leaveRequests', JSON.stringify(leaveRequests));
+    
+    const hasConflict = leaveRequests.some((request) => {
+      return (
+        request.employeeId === selectedEmployeeId &&
+        ((startDate >= request.startDate && startDate <= request.endDate) ||
+          (endDate >= request.startDate && endDate <= request.endDate))
+      );
+    });
+
+    if (hasConflict) {
+      setError(true);
+    } else {
+    
+      const leaveData = {
+        employeeId: selectedEmployeeId,
+        leaveType,
+        startDate,
+        endDate,
+      };
+
+      let updatedLeaveRequests = [...leaveRequests, leaveData];
+      localStorage.setItem('leaveRequests', JSON.stringify(updatedLeaveRequests));
+      setLeaveRequests(updatedLeaveRequests);
+
+      setSelectedEmployeeId('');
+      setLeaveType('');
+      setStartDate('');
+      setEndDate('');
+      setError(false);
+
+      setSuccessmsg('Leave recorded')
     }
-    else{
-      setError(true)
-    }
-
-    setSelectedEmployeeId('');
-    setLeaveType('');
-    setStartDate('');
-    setEndDate('');
-
   };
 
   return (
     <div className="leave-form">
       <h2>Leave Request Form</h2>
-  
-      {errorMessage?<p style={{"color":"red"}}>Values not entered</p>:""}
+      {errorMessage && <p style={{ color: 'red' }}>Invalid Entry</p>}
+      {successmsg && <p style={{ color: '#03e9f4'}}>{successmsg}</p>}
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>Select Employee:</label>
+          <label>Select Employee</label>
           <select
             value={selectedEmployeeId}
             onChange={(e) => setSelectedEmployeeId(e.target.value)}
@@ -68,16 +80,17 @@ const LeaveForm = ({ employees}) => {
           </select>
         </div>
         <div className="form-group">
-          <label>Reason:</label>
+          <label>Reason</label>
           <input
             type="text"
             value={leaveType}
+            placeholder='Enter Reason'
             onChange={(e) => setLeaveType(e.target.value)}
             
           />
         </div>
         <div className="form-group">
-          <label>Start Date:</label>
+          <label>Start Date</label>
           <input
             type="date"
             value={startDate}
@@ -86,7 +99,7 @@ const LeaveForm = ({ employees}) => {
           />
         </div>
         <div className="form-group">
-          <label>End Date:</label>
+          <label>End Date</label>
           <input
             type="date"
             value={endDate}
@@ -94,7 +107,12 @@ const LeaveForm = ({ employees}) => {
             
           />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className='btn-sbmt'>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Submit</button>
       </form>
     </div>
   );

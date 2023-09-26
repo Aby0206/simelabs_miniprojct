@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from '../header/header'
 import './home.css';
-import officeImage from '../../img/office_upld.jpg'
+import officeImage from '../../img/simelabs.jpg'
 
 
 const Home = () => {
