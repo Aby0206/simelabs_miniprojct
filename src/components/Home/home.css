@@ -12,7 +12,13 @@ body{
     font-family: sans-serif;
     background: linear-gradient(#141e30, #243b55);
 }
+h1{
+    color: #fff;
+}
 
+h2{
+    color: #fff;
+}
 .user_data {
     display: flex;
     justify-content: center;

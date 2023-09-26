@@ -49,7 +49,7 @@ const AddEmployee = () => {
           value={employee.id}
           onChange={handleInputChange}
           placeholder="Enter Employee Id"
-          id={`id_${employee.id}`} // Unique ID generation
+          id={`id_${employee.id}`} 
         />
       </div>
       <div>
@@ -60,7 +60,7 @@ const AddEmployee = () => {
           value={employee.name}
           onChange={handleInputChange}
           placeholder="Enter Name of Employee"
-          id={`name_${employee.id}`} // Unique ID generation
+          id={`name_${employee.id}`} 
         />
       </div>
       <div>
@@ -71,7 +71,7 @@ const AddEmployee = () => {
           value={employee.role}
           onChange={handleInputChange}
           placeholder="Enter the Role"
-          id={`role_${employee.id}`} // Unique ID generation
+          id={`role_${employee.id}`} 
         />
       </div>
       <button onClick={handleAddClick} class="btn-submit">

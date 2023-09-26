@@ -229,6 +229,9 @@
   }
 }
 
-.failure-msg{
+.success-msg{
   color: #03e9f4;
+}
+.failure-msg{
+  color: red;
 }

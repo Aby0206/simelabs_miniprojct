@@ -9,6 +9,7 @@ const LeaveForm = ({ employees }) => {
   const [endDate, setEndDate] = useState('');
   const [errorMessage, setError] = useState(false);
   const [leaveRequests, setLeaveRequests] = useState([]);
+  const [successmsg, setSuccessmsg]  = useState('');
 
   useEffect(() => {
     setEmployeeArray(JSON.parse(localStorage.getItem('employees')));
@@ -47,16 +48,19 @@ const LeaveForm = ({ employees }) => {
       setStartDate('');
       setEndDate('');
       setError(false);
+
+      setSuccessmsg('Leave recorded')
     }
   };
 
   return (
     <div className="leave-form">
       <h2>Leave Request Form</h2>
-      {errorMessage && <p style={{ color: 'red' }}>Leave request conflicts with existing requests</p>}
+      {errorMessage && <p style={{ color: 'red' }}>Invalid Entry</p>}
+      {successmsg && <p style={{ color: '#03e9f4'}}>{successmsg}</p>}
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label>Select Employee:</label>
+          <label>Select Employee</label>
           <select
             value={selectedEmployeeId}
             onChange={(e) => setSelectedEmployeeId(e.target.value)}
@@ -76,7 +80,7 @@ const LeaveForm = ({ employees }) => {
           </select>
         </div>
         <div className="form-group">
-          <label>Reason:</label>
+          <label>Reason</label>
           <input
             type="text"
             value={leaveType}
@@ -86,7 +90,7 @@ const LeaveForm = ({ employees }) => {
           />
         </div>
         <div className="form-group">
-          <label>Start Date:</label>
+          <label>Start Date</label>
           <input
             type="date"
             value={startDate}
@@ -95,7 +99,7 @@ const LeaveForm = ({ employees }) => {
           />
         </div>
         <div className="form-group">
-          <label>End Date:</label>
+          <label>End Date</label>
           <input
             type="date"
             value={endDate}
@@ -103,7 +107,12 @@ const LeaveForm = ({ employees }) => {
             
           />
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit" className='btn-sbmt'>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Submit</button>
       </form>
     </div>
   );
